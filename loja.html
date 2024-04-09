@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ITW - Olympic Store</title>
+    <link href="https://olympics.com/images/static/b2p-images/logo_color.svg" rel="shortcut icon"  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="myCSS.css" />
+    <style>
+        .carousel { width: 100%; margin: 0 auto; }
+        .carousel-item { z-index: -100; height: 600px; background-position: center center; background-repeat: no-repeat; background-size: cover; }
+            .carousel-item:nth-child(1) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bc/Beijing_China_Beijing-National-Stadium-02.jpg'); }
+            .carousel-item:nth-child(2) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Richmond_Olympic_Oval_front_view.jpg'); }
+            .carousel-item:nth-child(3) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/34/Rio2016_julho_VilaAtletas_Barra_002_2659_-c-2016_GabrielHeusi_HeusiAction.jpg'); }
+            .carousel-item:nth-child(4) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9d/New_national_stadium_tokyo_1.jpg'); }
+            .carousel-item:nth-child(5) { background-image: url('https://www.ticketnews.com/wp-content/uploads/paris-olympics-2024-e1647971146669.jpg'); }
+        
+        .icon{
+            height: 10px;
+            width: 10px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0; 
+
+        }
+
+        .dropdown-menu {
+            width: 300px;
+        }
+
+        .box select {
+            background-color: #7a7a7a;
+            color: white;
+            padding: 12px;
+            width: 250px;
+            border: none;
+            font-size: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            -webkit-appearance: button;
+            appearance: button;
+            outline: none;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" tabindex="Olympics"><img src="/Imagens/Olympic_rings.png" height="24" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " >
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="competitions.html"><i class="fa fa-trophy"></i> Competitions</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
+                    <li class="nav-item dropdown" style="font-weight: bolder;  border-bottom: 3px solid black;"  >
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-folder-o" aria-hidden="true"></i> More
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark ">
+                            <a class="dropdown-item" href="news.html">Olympic Games News</a>
+                            <a class="dropdown-item" href="loja.html"> Loja </a>
+                            <a class="dropdown-item" href="countdown.html">Paris 2024</a>
+                        </ul>
+                      </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 right-side">
+                    <li class="nav-item"> <a class="nav-link" aria-current="page" href="favoritos.html" > <i class="fa fa-heart text-danger"></i></a></li>
+                    <li class=" nav-item "><a class="nav-link" aria-current="page" href="about.html" > <i class="fa fa-info-circle"></i> About us </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Working Area -->
+    <div class="container mt-4">
+        <br>
+        <h2 style="  border-bottom: 3px solid red; width: 265px;"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Online Store  </h2> <br>
+        <div class="row">
+
+            <div class="col-4 col-md-2 col-lg-1 text-right">
+                <span class="form-control" id="quantidades"
+                      title="Quantidade total de produtos">0</span>
+            </div>
+            <div class="col-4 col-md-2 col-lg-1 text-right">
+                <span class="form-control" id="total"
+                      title="Preço total da compra">0.00</span>
+            </div>
+            <div class="col-4 col-md-7 col-lg-2 text-right" style="margin-bottom: 10px;">
+                <a href="pagamento.html" class="hidden btn btn-secondary" type="submit" onclick="return valid()" class=""
+                            title="Enviar pedido">
+                        Enviar
+                </a>
+                <button type="button" onclick="clean()" class="btn btn-secondary" title="Limpar pedido">
+                    <i class="fa fa-trash-o"></i>
+                </button>
+            </div>
+
+            <div class="col-12 col-md-1 col-lg-1 offset-6 dropdown">
+                <a class="btn btn-secondary dropdown-toggle"role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-shopping-cart text-dark " style="font-size: 30px;"></i>
+                </a>
+
+                <ul class="dropdown-menu" id="cart">
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="box">
+            <select id="pais" style="height: 50px; font-size: large; width:175px; text-align: center;">
+            <option selected> <b>Select country</b> </option>
+            <option value="alemanha">  Alemanha</option>
+            <option value="portugal"> Portugal</option>
+            <option value="russia"> Russia </option>
+            <option value="eua" > USA </option>   
+        </select>
+        </div>
+
+        <br>
+        <div class="row data"  id="portugal">
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 30px;">
+                <div class="col-4"><img style="height: 300px; width: 300px;" src="/portugal/cachecol portugal.jpg" ></div>
+                <input type="hidden" id="qty1" name="qty1" value="0" /> <br>
+                <h5 >Cachecol</h5>
+                <div > <input type="hidden" id="name1" value="Cachecol Portugal " ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price1" name="price1" value="14.99" class="text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(1); addCart(1)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div><br>
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 30px;">
+                <div class="col-4"><img src="/portugal/bandeira portugal.jpg"  style="height: 300px; width: 300px;"></div>
+                <input type="hidden" id="qty2" name="qty2" value="0" /> <br>
+                <h5 >Bandeira</h5>
+                <div > <input type="hidden" id="name2" value="Bandeira Portugal" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price2" name="price2" value="19.99" class="text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(2); addCart(2)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div><br>
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 40px;">
+                <div class="col-4"><img src="/portugal/t shirt ronaldo.jpg"style="height: 300px; width: 300px;" ></div>
+                <input type="hidden" id="qty3" name="qty3" value="0" /> <br>
+                <h5>T-shirt</h5>
+                <div > <input type="hidden" id="name3" value="T-shirt Portugal" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price3" name="price3" value="49.99" class=" text-left border-0" readonly> €</div> <br>
+                <button type="button"  class="btn btn-secondary btn-block " onclick="this.blur(); addProduct(3); addCart(3)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+        </div>
+        <div class="row data " id="alemanha">
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 30px;">
+                <div class="col-4"><img style="height: 300px; width: 300px;" src="/alemanha/cahecol alemanha.jpg" ></div>
+                <input type="hidden" id="qty4" name="qty4" value="0" /> <br>
+                <h5>Cachecol</h5>
+                <div > <input type="hidden" id="name4" value="Cachecol Alemanha" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price4" name="price4" value="14.99" class="text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(4); addCart(4)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 30px;">
+                <div class="col-4"><img src="/alemanha/bandeira alemanha.png"  style="height: 300px; width: 300px;"></div>
+                <input type="hidden" id="qty5" name="qty5" value="0" /> <br>
+                <h5>Bandeira</h5>
+                <div > <input type="hidden" id="name5" value="Bandeira Alemanha" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price5" name="price5" value="19.99" class="text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(5); addCart(5)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 40px;">
+                <div class="col-4"><img src="/alemanha/t shirt alemanha.jpg"style="height: 300px; width: 300px;" ></div>
+                <input type="hidden" id="qty6" name="qty6" value="0" /> <br>
+                <h5>T-shirt</h5>
+                <div > <input type="hidden" id="name6" value="T-shirt Alemanha" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price6" name="price6" value="49.99" class=" text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(6); addCart(6)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+        </div>
+        <div class="row data " id="russia">
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 30px;">
+                <div class="col-4"><img style="height: 300px; width: 300px;" src="/russia/cachecol russia.jpg" ></div>
+                <input type="hidden" id="qty7" name="qty7" value="0" /> <br>
+                <h5>Cachecol</h5>
+                <div > <input type="hidden" id="name7" value="Cachecol Rússia" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price7" name="price7" value="14.99" class="text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(7); addCart(7)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 30px;">
+                <div class="col-4"><img src="/russia/bandeira russia.jpg"  style="height: 300px; width: 300px;"></div>
+                <input type="hidden" id="qty8" name="qty8" value="0" /> <br>
+                <h5>Bandeira</h5>
+                <div > <input type="hidden" id="name8" value="Bandeira Rússia" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price8" name="price8" value="19.99" class="text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(8); addCart(8)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 40px;">
+                <div class="col-4"><img src="russia/t shirt russia.jpg"style="height: 300px; width: 300px;" ></div>
+                <input type="hidden" id="qty9" name="qty9" value="0" /> <br>
+                <h5>T-shirt</h5>
+                <div > <input type="hidden" id="name9" value="T-shirt Rússia" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price9" name="price9" value="49.99" class=" text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(9); addCart(9)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+        </div>
+        <div class="row data " id="eua">
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 30px;">
+                <div class="col-4"><img style="height: 300px; width: 300px;" src="/EUA/cachecol usa.jpg" ></div>
+                <input type="hidden" id="qty10" name="qty10" value="0" /> <br>
+                <h5>Cachecol</h5>
+                <div > <input type="hidden" id="name10" value="Cachecol EUA" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price10" name="price10" value="14.99" class="text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(10); addCart(10)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 30px;">
+                <div class="col-4"><img src="/EUA/bandeira usa.gif"  style="height: 300px; width: 300px;"></div>
+                <input type="hidden" id="qty11" name="qty11" value="0" /> <br>
+                <h5>Bandeira</h5>
+                <div > <input type="hidden" id="name11" value="Bandeira EUA" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price11" name="price11" value="19.99" class="text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(11); addCart(11)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4" style="margin-bottom: 40px;">
+                <div class="col-4"><img src="/EUA/t shirt usa.jpg"style="height: 300px; width: 300px;" ></div>
+                <input type="hidden" id="qty12" name="qty12" value="0" /> <br>
+                <h5>T-shirt</h5>
+                <div > <input type="hidden" id="name12" value="T-shirt EUA" ></div>
+                <div class=" text-right"><input style="text-align: right;" id="price12" name="price12" value="49.99" class=" text-left border-0" readonly> €</div> <br>
+                <button type="button" class="btn btn-secondary btn-block" onclick="this.blur(); addProduct(12); addCart(12)"><i class="fa fa-shopping-bag"></i> Adicionar ao meu cesto</button>
+            </div>
+        </div>
+    </div>
+    <!-- End of Working Area -->
+    <nav class="navbar navbar-light bg-light fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Introdução às Tecnologias Web - 2022/23</div>
+            <div class="navbar-text">Made by João Varela & Tiago Albuquerque</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script src="loja.js"></script>
+</body>
+</html>

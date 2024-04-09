@@ -1,0 +1,103 @@
+input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+  /* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 4px solid rgb(3, 250, 48);
+}
+
+input.error {
+  border: 1px solid red !important;
+}
+
+label.error {
+  color: red;
+}
+
+[type="checkbox"]{
+  opacity: 0;
+}
+
+[type="checkbox"] + label{
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color: black;
+  line-height: 25px;
+}
+
+[type="checkbox"] + label::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid #aaa;
+  background: #fff;
+  margin-top: 5px;
+}
+
+[type="checkbox"]:checked + label::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid rgb(3, 250, 36);
+  background: #fff;
+  margin-top: 5px;
+}
+
+[type="checkbox"]:checked + label::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-image: url(/Imagens/check.png);
+  background-size: contain;
+  transform: scale(1);
+  opacity: 1;
+  transition:all .3s ease;
+  margin-top: 5px;
+}
+
+[type="checkbox"]:not(:checked) + label::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-image: url(/Imagens/check.png);
+  background-size: contain;
+  transform: scale(0);
+  opacity: 0;
+  margin-top: 5px;
+}

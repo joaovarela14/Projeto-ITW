@@ -1,0 +1,44 @@
+.wrapper{
+    display: flex;
+}
+
+.count-wrapper{
+    width: 140px;
+    height: 140px;
+    background: transparent;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 .6rem;
+}
+
+.count-wrapper div{
+    font-weight: 900;
+    font-size: 4rem;
+    color: rgba(2, 2, 2, 0.87);
+}
+
+.count-wrapper span{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: .2rem 0;
+    background: rgba(153, 153, 153, 0.497);
+
+}
+
+.alert{
+    animation: alert 0.9s linear infinite alternate;
+}
+
+@keyframes alert{
+    0%{
+        background: #112;
+    }
+    100%{
+        background: #a11;
+    }
+}
